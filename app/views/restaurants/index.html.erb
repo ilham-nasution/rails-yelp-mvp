@@ -1,0 +1,17 @@
+<h1 class="mb-3">Restaurants</h1>
+<ul class="list-unstyled">
+  <% @restaurants.each do |restaurant| %>
+    <%= link_to restaurant_path(restaurant), class: 'text-decoration-none text-body' do%>
+      <li class="media mb-3">
+        <img src="https://via.placeholder.com/100" class="mr-3" alt="image">
+        <div class="media-body">
+          <h5 class="mt-0 mb-1"><%= restaurant.name %></h5>
+          <i class="fas fa-map-marker-alt mr-2"></i><%= restaurant.address %>
+          <p class="mb-0"><i class="fas fa-phone mr-2"></i><%= restaurant.phone_number %></p>
+          <p><i class="fas fa-utensils mr-2"></i><%= restaurant.category.capitalize %></p>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+

@@ -1,0 +1,15 @@
+<h1><%= @restaurant.name %> Reviews</h1>
+
+<% @restaurant.reviews.each do |review| %>
+<div class="media mb-2 border p-3 rounded shadow-sm">
+  <img src="https://img.icons8.com/plasticine/2x/user.png" width="60px" height="60px" class="mr-3 rounded-circle border" alt="user">
+  <div class="media-body">
+    <h5 class="mt-0"><%= review.content %></h5>
+    <%= "⭐️" * review.rating %>
+  </div>
+</div>
+<% end %>
+
+<div class="text-center">
+  <i class="far fa-edit mr-2"></i><%= link_to "Write a review", new_restaurant_review_path(@restaurant) %>
+</div>
